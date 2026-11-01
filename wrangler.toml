@@ -4,6 +4,10 @@ compatibility_date = "2024-11-01"
 compatibility_flags = ["nodejs_compat"]
 
 # Static assets (frontend)
+[assets]
+directory = "."
+binding = "ASSETS"
+run_worker_first = true
 
 # D1 Database
 [[d1_databases]]
@@ -11,11 +15,6 @@ binding = "DB"
 database_name = "elite-digital-db"
 database_id = "76f5ee50-b4cb-47ca-9668-abe1de371a37"  # Replace after creating with wrangler d1 create
 
-# R2 Bucket for media
-[[r2_buckets]]
-binding = "R2"
-bucket_name = "elite-digital-media"
-# Create with: wrangler r2 bucket create elite-digital-media
 
 # Environment variables (set secrets with wrangler secret put)
 [vars]
