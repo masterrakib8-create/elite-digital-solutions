@@ -1,4 +1,4 @@
-import type { Env, Admin } from '../types';
+import type { Env, Admin } from './types';
 
 const ITERATIONS = 100000; // Balanced for Workers free tier CPU limits
 const HASH_ALGO = 'SHA-256';
