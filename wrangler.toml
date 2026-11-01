@@ -9,7 +9,7 @@ compatibility_flags = ["nodejs_compat"]
 [[d1_databases]]
 binding = "DB"
 database_name = "elite-digital-db"
-database_id = "YOUR_D1_DATABASE_ID_HERE"  # Replace after creating with wrangler d1 create
+database_id = "76f5ee50-b4cb-47ca-9668-abe1de371a37"  # Replace after creating with wrangler d1 create
 
 # R2 Bucket for media
 [[r2_buckets]]
