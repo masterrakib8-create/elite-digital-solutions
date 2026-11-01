@@ -1,0 +1,24 @@
+{
+  "name": "elite-digital-solutions",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create elite-digital-db",
+    "db:migrate:local": "wrangler d1 execute elite-digital-db --local --file=./migrations/0001_init.sql",
+    "db:migrate": "wrangler d1 execute elite-digital-db --file=./migrations/0001_init.sql",
+    "db:seed": "wrangler d1 execute elite-digital-db --file=./migrations/0002_seed.sql",
+    "db:seed:local": "wrangler d1 execute elite-digital-db --local --file=./migrations/0002_seed.sql"
+  },
+  "dependencies": {
+    "hono": "^4.6.12",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241112.0",
+    "typescript": "^5.6.3",
+    "wrangler": "^3.91.0"
+  }
+}

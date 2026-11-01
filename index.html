@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Digital Solutions | Premium Digital Agency Bangladesh</title>
+  <meta name="description" content="Premium digital services: Facebook & YouTube recovery guidance, digital marketing, branding, website development and cybersecurity consultation." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: { 400: '#f5d76e', 500: '#d4af37', 600: '#b8960f', 700: '#9a7b0a' },
+            charcoal: { 800: '#1a1a1a', 900: '#0f0f0f', 950: '#0a0a0a' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="bg-charcoal-950 text-white font-sans antialiased">
+
+  <!-- Top Bar -->
+  <div class="bg-black border-b border-gold-500/20 text-xs py-2 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+      <div class="flex gap-6 text-gray-400">
+        <span>📞 +880 1700 123456</span>
+        <span>✉️ info@elitedigital.com</span>
+      </div>
+      <div class="flex gap-4 items-center">
+        <button id="lang-en" class="lang-btn text-gold-500 font-medium">EN</button>
+        <span class="text-gray-600">|</span>
+        <button id="lang-bn" class="lang-btn text-gray-400 hover:text-gold-500">বাংলা</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header id="navbar" class="sticky top-0 z-50 bg-charcoal-950/95 backdrop-blur-md border-b border-gold-500/10 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-gold-700 flex items-center justify-center shadow-lg shadow-gold-500/20">
+            <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-bold text-lg leading-tight group-hover:text-gold-400 transition">Elite Digital</div>
+            <div class="text-[10px] tracking-widest text-gold-500 uppercase">Solutions</div>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-1">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#reviews" class="nav-link">Reviews</a>
+          <a href="#pricing" class="nav-link">Pricing</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="#order" class="hidden sm:inline-flex btn-gold text-sm">Get a Quote →</a>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gold-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-gold-500/10 bg-charcoal-900">
+      <div class="px-4 py-4 space-y-1">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#portfolio" class="mobile-link">Portfolio</a>
+        <a href="#reviews" class="mobile-link">Reviews</a>
+        <a href="#pricing" class="mobile-link">Pricing</a>
+        <a href="#faq" class="mobile-link">FAQ</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+        <a href="#order" class="btn-gold block text-center mt-3">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="relative min-h-[90vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-charcoal-950 via-charcoal-900 to-black"></div>
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute top-20 right-10 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 left-10 w-72 h-72 bg-gold-600/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-500/30 bg-gold-500/5 text-gold-400 text-sm">
+          <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span>
+          Welcome to Elite Digital Solutions
+        </div>
+        
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+          Transform Your Ideas<br />
+          Into <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">Digital Success</span>
+        </h1>
+        
+        <p class="text-gray-400 text-lg max-w-xl leading-relaxed">
+          We are a premium digital agency providing professional guidance for account recovery, branding, digital marketing, website development and cybersecurity — following official platform policies.
+        </p>
+        
+        <div class="flex flex-wrap gap-4">
+          <a href="#services" class="btn-gold">Explore Our Services →</a>
+          <a href="#portfolio" class="btn-outline">View Sample Work</a>
+        </div>
+        
+        <div class="flex flex-wrap gap-6 pt-4 text-sm text-gray-400">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Policy Compliant
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Professional Support
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+            Transparent Process
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative hidden lg:block">
+        <div class="relative z-10 rounded-2xl overflow-hidden border border-gold-500/20 shadow-2xl shadow-gold-500/10 bg-gradient-to-br from-charcoal-800 to-black p-1">
+          <div class="rounded-xl bg-charcoal-900 p-8 flex flex-col items-center justify-center min-h-[340px]">
+            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-gold-400 to-gold-700 flex items-center justify-center mb-6 shadow-lg shadow-gold-500/30">
+              <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            </div>
+            <h3 class="font-display text-2xl font-bold text-gold-400 mb-2">Elite Digital Solutions</h3>
+            <p class="text-gray-400 text-sm tracking-widest uppercase">Innovate • Create • Grow</p>
+            <div class="mt-8 grid grid-cols-3 gap-4 w-full text-center">
+              <div class="p-3 rounded-lg bg-black/40 border border-gold-500/10">
+                <div class="text-gold-400 font-bold text-lg">8+</div>
+                <div class="text-[10px] text-gray-500 uppercase">Sample Demos</div>
+              </div>
+              <div class="p-3 rounded-lg bg-black/40 border border-gold-500/10">
+                <div class="text-gold-400 font-bold text-lg">9</div>
+                <div class="text-[10px] text-gray-500 uppercase">Service Areas</div>
+              </div>
+              <div class="p-3 rounded-lg bg-black/40 border border-gold-500/10">
+                <div class="text-gold-400 font-bold text-lg">24/7</div>
+                <div class="text-[10px] text-gray-500 uppercase">Guidance</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute -inset-4 bg-gradient-to-r from-gold-500/20 to-transparent rounded-3xl blur-2xl -z-10"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section id="services" class="py-24 bg-charcoal-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16">
+        <p class="text-gold-500 text-sm font-medium tracking-widest uppercase mb-3">What We Offer</p>
+        <h2 class="font-display text-3xl md:text-4xl font-bold">Our Premium Services</h2>
+        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Professional digital solutions organized by category. All account-related work follows official platform policies.</p>
+      </div>
+      
+      <div id="services-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Loaded dynamically -->
+        <div class="col-span-full text-center text-gray-500 py-12">Loading services...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PORTFOLIO / LIVE DEMO ========== -->
+  <section id="portfolio" class="py-24 bg-charcoal-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <p class="text-gold-500 text-sm font-medium tracking-widest uppercase mb-3">Sample Work</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold">Concept Demos & Sample Projects</h2>
+          <p class="text-gray-400 mt-3 max-w-xl">These are professionally designed concept demonstrations and sample work. They are clearly labelled and do not represent real client projects unless stated otherwise.</p>
+        </div>
+      </div>
+      
+      <div id="projects-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="col-span-full text-center text-gray-500 py-12">Loading sample projects...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REVIEWS ========== -->
+  <section id="reviews" class="py-24 bg-charcoal-900 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-gold-500 text-sm font-medium tracking-widest uppercase mb-3">Testimonials</p>
+        <h2 class="font-display text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
+        <p id="reviews-subtitle" class="text-gray-400 mt-3">Customer feedback will appear here as clients complete their projects.</p>
+      </div>
+
+      <!-- Real published reviews container -->
+      <div id="real-reviews-container" class="hidden">
+        <div id="reviews-carousel" class="relative">
+          <div id="reviews-track" class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide">
+            <!-- Real reviews injected here -->
+          </div>
+          <button id="rev-prev" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 rounded-full bg-black/80 border border-gold-500/30 text-gold-400 flex items-center justify-center hover:bg-gold-500 hover:text-black transition z-10">‹</button>
+          <button id="rev-next" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 rounded-full bg-black/80 border border-gold-500/30 text-gold-400 flex items-center justify-center hover:bg-gold-500 hover:text-black transition z-10">›</button>
+        </div>
+      </div>
+
+      <!-- Empty / Sample Preview State -->
+      <div id="reviews-empty-state" class="max-w-3xl mx-auto">
+        <div class="rounded-2xl border border-gold-500/20 bg-gradient-to-br from-charcoal-800 to-black p-8 md:p-12 text-center">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold-500/10 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-gold-400 mb-3">No published reviews yet</h3>
+          <p class="text-gray-400 mb-8 leading-relaxed">
+            Customer feedback will appear here as clients complete their projects and submit reviews. 
+            All reviews are moderated before publication.
+          </p>
+          
+          <!-- Sample Review Preview (clearly labelled) -->
+          <div class="border border-dashed border-gold-500/30 rounded-xl p-6 text-left bg-black/30">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="px-2 py-0.5 text-[10px] uppercase tracking-wider bg-gold-500/20 text-gold-400 rounded">Sample Preview</span>
+              <span class="text-xs text-gray-500">Design demonstration only — not a real customer</span>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-1">
+                <p class="text-gray-300 italic mb-3">"Professional guidance and clear communication throughout the process. Highly recommended for policy-compliant support."</p>
+                <div class="flex text-gold-500 text-sm mb-1">★★★★★</div>
+                <p class="text-sm text-gray-400">— Sample Client Name · Website Development</p>
+              </div>
+              <div class="w-14 h-14 rounded-full bg-gradient-to-br from-gold-500/30 to-gold-700/30 flex items-center justify-center text-gold-400 font-bold text-lg shrink-0">S</div>
+            </div>
+          </div>
+          
+          <button onclick="document.getElementById('review-form-section').classList.remove('hidden'); this.closest('#reviews-empty-state').querySelector('button').scrollIntoView({behavior:'smooth'})" 
+                  class="btn-outline mt-8 text-sm">
+            Submit Your Review
+          </button>
+        </div>
+      </div>
+
+      <!-- Review Submission Form -->
+      <div id="review-form-section" class="hidden mt-12 max-w-xl mx-auto">
+        <div class="rounded-2xl border border-gold-500/20 bg-charcoal-800 p-6 md:p-8">
+          <h3 class="font-display text-xl font-semibold mb-6 text-center">Share Your Experience</h3>
+          <form id="review-form" class="space-y-4">
+            <div>
+              <label class="block text-sm text-gray-400 mb-1">Your Name *</label>
+              <input type="text" name="customer_name" required class="input-field" placeholder="Your name" />
+            </div>
+            <div>
+              <label class="block text-sm text-gray-400 mb-1">Service Received</label>
+              <input type="text" name="service_taken" class="input-field" placeholder="e.g. Logo Design, Facebook Guidance" />
+            </div>
+            <div>
+              <label class="block text-sm text-gray-400 mb-1">Rating *</label>
+              <select name="rating" required class="input-field">
+                <option value="5">★★★★★ (5)</option>
+                <option value="4">★★★★☆ (4)</option>
+                <option value="3">★★★☆☆ (3)</option>
+                <option value="2">★★☆☆☆ (2)</option>
+                <option value="1">★☆☆☆☆ (1)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm text-gray-400 mb-1">Your Review *</label>
+              <textarea name="review_text_en" required rows="4" class="input-field" placeholder="Share your honest feedback..."></textarea>
+            </div>
+            <p class="text-xs text-gray-500">Reviews are moderated and published only after approval.</p>
+            <button type="submit" class="btn-gold w-full">Submit Review</button>
+            <p id="review-form-msg" class="text-center text-sm hidden"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section id="pricing" class="py-24 bg-charcoal-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16">
+        <p class="text-gold-500 text-sm font-medium tracking-widest uppercase mb-3">Packages</p>
+        <h2 class="font-display text-3xl md:text-4xl font-bold">Transparent Pricing</h2>
+        <p class="text-gray-400 mt-4">Custom quotes available for recovery guidance and complex projects.</p>
+      </div>
+      <div id="packages-grid" class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="col-span-full text-center text-gray-500">Loading packages...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section id="faq" class="py-24 bg-charcoal-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-gold-500 text-sm font-medium tracking-widest uppercase mb-3">FAQ</p>
+        <h2 class="font-display text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
+      </div>
+      <div id="faq-list" class="space-y-4">
+        <div class="text-center text-gray-500">Loading FAQs...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ORDER FORM ========== -->
+  <section id="order" class="py-24 bg-charcoal-950">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <p class="text-gold-500 text-sm font-medium tracking-widest uppercase mb-3">Get Started</p>
+        <h2 class="font-display text-3xl md:text-4xl font-bold">Request a Quote / Place Order</h2>
+        <p class="text-gray-400 mt-3">Fill the form and we will contact you shortly. You will receive an order reference number.</p>
+      </div>
+      
+      <form id="order-form" class="rounded-2xl border border-gold-500/20 bg-charcoal-900 p-6 md:p-8 space-y-5">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm text-gray-400 mb-1">Full Name *</label>
+            <input type="text" name="customer_name" required class="input-field" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-400 mb-1">Phone Number *</label>
+            <input type="tel" name="customer_phone" required class="input-field" placeholder="+8801XXXXXXXXX" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-400 mb-1">Email</label>
+          <input type="email" name="customer_email" class="input-field" />
+        </div>
+        <div>
+          <label class="block text-sm text-gray-400 mb-1">Service Interested In</label>
+          <select name="service_title" class="input-field" id="order-service-select">
+            <option value="">Select a service...</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-400 mb-1">Requirements / Details</label>
+          <textarea name="requirements" rows="4" class="input-field" placeholder="Describe what you need..."></textarea>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-400 mb-1">Preferred Contact Method</label>
+          <select name="preferred_contact" class="input-field">
+            <option value="whatsapp">WhatsApp</option>
+            <option value="messenger">Messenger</option>
+            <option value="phone">Phone Call</option>
+            <option value="email">Email</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-gold w-full">Submit Order</button>
+        <p id="order-form-msg" class="text-center text-sm hidden"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="py-24 bg-charcoal-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <p class="text-gold-500 text-sm font-medium tracking-widest uppercase mb-3">Contact</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">Let's Work Together</h2>
+          <p class="text-gray-400 mb-8 leading-relaxed">
+            Have a question or need guidance? Reach out through any of the channels below. 
+            We respond during business hours and never request passwords or OTPs.
+          </p>
+          <div class="space-y-4 text-gray-300">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-lg bg-gold-500/10 flex items-center justify-center text-gold-500">📞</span>
+              <span>+880 1700 123456</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-lg bg-gold-500/10 flex items-center justify-center text-gold-500">✉️</span>
+              <span>info@elitedigital.com</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-lg bg-gold-500/10 flex items-center justify-center text-gold-500">📍</span>
+              <span>Dhaka, Bangladesh</span>
+            </div>
+          </div>
+        </div>
+        
+        <form id="contact-form" class="rounded-2xl border border-gold-500/20 bg-charcoal-800 p-6 md:p-8 space-y-4">
+          <div>
+            <label class="block text-sm text-gray-400 mb-1">Name *</label>
+            <input type="text" name="name" required class="input-field" />
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm text-gray-400 mb-1">Email</label>
+              <input type="email" name="email" class="input-field" />
+            </div>
+            <div>
+              <label class="block text-sm text-gray-400 mb-1">Phone</label>
+              <input type="tel" name="phone" class="input-field" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm text-gray-400 mb-1">Subject</label>
+            <input type="text" name="subject" class="input-field" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-400 mb-1">Message *</label>
+            <textarea name="message" required rows="4" class="input-field"></textarea>
+          </div>
+          <button type="submit" class="btn-gold w-full">Send Message</button>
+          <p id="contact-form-msg" class="text-center text-sm hidden"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-black border-t border-gold-500/10 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-gold-400 to-gold-700 flex items-center justify-center">
+              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            </div>
+            <div>
+              <div class="font-display font-bold">Elite Digital</div>
+              <div class="text-[10px] text-gold-500 tracking-widest">SOLUTIONS</div>
+            </div>
+          </div>
+          <p class="text-gray-500 text-sm leading-relaxed">Premium digital services with transparent, policy-compliant processes.</p>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-gold-400 mb-4 text-sm uppercase tracking-wider">Services</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#services" class="hover:text-gold-400 transition">Facebook & Meta</a></li>
+            <li><a href="#services" class="hover:text-gold-400 transition">YouTube Services</a></li>
+            <li><a href="#services" class="hover:text-gold-400 transition">Digital Marketing</a></li>
+            <li><a href="#services" class="hover:text-gold-400 transition">Branding & Design</a></li>
+            <li><a href="#services" class="hover:text-gold-400 transition">Website Development</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-gold-400 mb-4 text-sm uppercase tracking-wider">Company</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#about" class="hover:text-gold-400 transition">About Us</a></li>
+            <li><a href="#portfolio" class="hover:text-gold-400 transition">Portfolio</a></li>
+            <li><a href="#pricing" class="hover:text-gold-400 transition">Pricing</a></li>
+            <li><a href="#faq" class="hover:text-gold-400 transition">FAQ</a></li>
+            <li><a href="/privacy.html" class="hover:text-gold-400 transition">Privacy Policy</a></li>
+            <li><a href="/terms.html" class="hover:text-gold-400 transition">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-gold-400 mb-4 text-sm uppercase tracking-wider">Connect</h4>
+          <div class="flex gap-3 mb-4">
+            <a href="#" class="w-9 h-9 rounded-lg bg-charcoal-800 border border-gold-500/20 flex items-center justify-center text-gold-500 hover:bg-gold-500 hover:text-black transition">f</a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-charcoal-800 border border-gold-500/20 flex items-center justify-center text-gold-500 hover:bg-gold-500 hover:text-black transition">▶</a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-charcoal-800 border border-gold-500/20 flex items-center justify-center text-gold-500 hover:bg-gold-500 hover:text-black transition">in</a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-charcoal-800 border border-gold-500/20 flex items-center justify-center text-gold-500 hover:bg-gold-500 hover:text-black transition">W</a>
+          </div>
+          <p class="text-xs text-gray-500">WhatsApp available for quick support.</p>
+        </div>
+      </div>
+      
+      <div class="border-t border-gold-500/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <p>© 2026 Elite Digital Solutions. All rights reserved.</p>
+        <p>Built for free Cloudflare deployment · No guarantees on platform recovery outcomes</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/8801700123456" target="_blank" rel="noopener"
+     class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform"
+     aria-label="WhatsApp">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

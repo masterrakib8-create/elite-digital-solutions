@@ -1,0 +1,37 @@
+name = "elite-digital-solutions"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Static assets (frontend)
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "elite-digital-db"
+database_id = "YOUR_D1_DATABASE_ID_HERE"  # Replace after creating with wrangler d1 create
+
+# R2 Bucket for media
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "elite-digital-media"
+# Create with: wrangler r2 bucket create elite-digital-media
+
+# Environment variables (set secrets with wrangler secret put)
+[vars]
+ENVIRONMENT = "production"
+SITE_NAME = "Elite Digital Solutions"
+SITE_URL = "https://elitedigital.pages.dev"  # Update with your domain
+ADMIN_EMAIL = "admin@elitedigitalsolutions.com"
+
+# For local development
+[env.development]
+vars = { ENVIRONMENT = "development" }
+
+# Routes for API if needed
+# [[routes]]
+# pattern = "api.elitedigitalsolutions.com/*"
+# zone_name = "elitedigitalsolutions.com"

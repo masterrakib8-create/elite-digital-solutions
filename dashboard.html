@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Elite Digital Solutions Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: { 400: '#f5d76e', 500: '#d4af37', 600: '#b8960f' },
+            charcoal: { 800: '#1a1a1a', 900: '#0f0f0f', 950: '#0a0a0a' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-charcoal-950 text-white min-h-screen">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-black border-r border-gold-500/10 hidden md:flex flex-col">
+      <div class="p-5 border-b border-gold-500/10">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
+            <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          </div>
+          <span class="font-bold text-sm">EDS Admin</span>
+        </div>
+      </div>
+      <nav class="flex-1 p-3 space-y-1 text-sm">
+        <a href="#stats" class="side-link active" data-section="stats">Dashboard</a>
+        <a href="#orders" class="side-link" data-section="orders">Orders</a>
+        <a href="#projects" class="side-link" data-section="projects">Portfolio / Demos</a>
+        <a href="#reviews" class="side-link" data-section="reviews">Reviews</a>
+        <a href="#messages" class="side-link" data-section="messages">Messages</a>
+        <a href="#services" class="side-link" data-section="services">Services</a>
+      </nav>
+      <div class="p-3 border-t border-gold-500/10">
+        <button id="logout-btn" class="w-full text-left px-3 py-2 text-sm text-red-400 hover:bg-red-500/10 rounded-lg transition">Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex-1 overflow-auto">
+      <header class="sticky top-0 z-10 bg-charcoal-950/90 backdrop-blur border-b border-gold-500/10 px-6 py-4 flex items-center justify-between">
+        <h1 id="page-title" class="text-lg font-semibold">Dashboard</h1>
+        <div class="text-sm text-gray-400" id="admin-name">Admin</div>
+      </header>
+
+      <div class="p-6">
+        <!-- Stats Section -->
+        <section id="section-stats" class="section">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8" id="stats-grid">
+            <div class="bg-charcoal-900 border border-gold-500/15 rounded-xl p-5">
+              <div class="text-gray-400 text-xs uppercase tracking-wider mb-1">Total Orders</div>
+              <div class="text-2xl font-bold text-gold-400" id="stat-orders">—</div>
+            </div>
+            <div class="bg-charcoal-900 border border-gold-500/15 rounded-xl p-5">
+              <div class="text-gray-400 text-xs uppercase tracking-wider mb-1">Pending</div>
+              <div class="text-2xl font-bold text-yellow-400" id="stat-pending">—</div>
+            </div>
+            <div class="bg-charcoal-900 border border-gold-500/15 rounded-xl p-5">
+              <div class="text-gray-400 text-xs uppercase tracking-wider mb-1">Completed</div>
+              <div class="text-2xl font-bold text-green-400" id="stat-completed">—</div>
+            </div>
+            <div class="bg-charcoal-900 border border-gold-500/15 rounded-xl p-5">
+              <div class="text-gray-400 text-xs uppercase tracking-wider mb-1">Unread Messages</div>
+              <div class="text-2xl font-bold text-blue-400" id="stat-messages">—</div>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div class="bg-charcoal-900 border border-gold-500/15 rounded-xl p-5">
+              <div class="text-gray-400 text-xs uppercase tracking-wider mb-1">Active Services</div>
+              <div class="text-xl font-bold" id="stat-services">—</div>
+            </div>
+            <div class="bg-charcoal-900 border border-gold-500/15 rounded-xl p-5">
+              <div class="text-gray-400 text-xs uppercase tracking-wider mb-1">Portfolio Items</div>
+              <div class="text-xl font-bold" id="stat-projects">—</div>
+            </div>
+            <div class="bg-charcoal-900 border border-gold-500/15 rounded-xl p-5">
+              <div class="text-gray-400 text-xs uppercase tracking-wider mb-1">Total Reviews</div>
+              <div class="text-xl font-bold" id="stat-reviews">—</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Orders -->
+        <section id="section-orders" class="section hidden">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-semibold">Orders Management</h2>
+            <select id="order-filter" class="bg-charcoal-800 border border-gold-500/20 rounded-lg px-3 py-1.5 text-sm">
+              <option value="">All Status</option>
+              <option value="new">New</option>
+              <option value="pending">Pending</option>
+              <option value="in_progress">In Progress</option>
+              <option value="completed">Completed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-gold-500/15">
+            <table class="w-full text-sm">
+              <thead class="bg-black text-gray-400 text-left">
+                <tr>
+                  <th class="px-4 py-3">Ref</th>
+                  <th class="px-4 py-3">Customer</th>
+                  <th class="px-4 py-3">Service</th>
+                  <th class="px-4 py-3">Status</th>
+                  <th class="px-4 py-3">Date</th>
+                  <th class="px-4 py-3">Action</th>
+                </tr>
+              </thead>
+              <tbody id="orders-tbody" class="divide-y divide-gold-500/10"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="section-projects" class="section hidden">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-semibold">Portfolio / Sample Demos</h2>
+            <p class="text-xs text-gray-500">All items should be clearly marked as Sample / Concept Demo</p>
+          </div>
+          <div id="projects-admin-list" class="space-y-3"></div>
+        </section>
+
+        <!-- Reviews -->
+        <section id="section-reviews" class="section hidden">
+          <div class="mb-4">
+            <h2 class="font-semibold">Reviews Management</h2>
+            <p class="text-xs text-gray-500 mt-1">Approve and publish only genuine customer reviews. Sample content must stay unpublished.</p>
+          </div>
+          <div id="reviews-admin-list" class="space-y-3"></div>
+        </section>
+
+        <!-- Messages -->
+        <section id="section-messages" class="section hidden">
+          <h2 class="font-semibold mb-4">Customer Messages</h2>
+          <div id="messages-list" class="space-y-3"></div>
+        </section>
+
+        <!-- Services -->
+        <section id="section-services" class="section hidden">
+          <h2 class="font-semibold mb-4">Services</h2>
+          <div id="services-admin-list" class="space-y-3"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    .side-link { @apply block px-3 py-2.5 rounded-lg text-gray-400 hover:text-gold-400 hover:bg-gold-500/5 transition; }
+    .side-link.active { @apply text-gold-400 bg-gold-500/10; }
+  </style>
+
+  <script>
+    const API = '/api';
+
+    async function api(path, options = {}) {
+      const res = await fetch(API + path, { credentials: 'include', headers: { 'Content-Type': 'application/json' }, ...options });
+      return res.json();
+    }
+
+    // Auth check
+    async function checkAuth() {
+      const data = await api('/admin/me');
+      if (!data.success) {
+        window.location.href = '/admin/';
+        return null;
+      }
+      document.getElementById('admin-name').textContent = data.data.name || data.data.email;
+      return data.data;
+    }
+
+    // Navigation
+    document.querySelectorAll('.side-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const section = link.dataset.section;
+        document.querySelectorAll('.side-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+        document.getElementById('section-' + section)?.classList.remove('hidden');
+        document.getElementById('page-title').textContent = link.textContent;
+        if (section === 'orders') loadOrders();
+        if (section === 'projects') loadProjectsAdmin();
+        if (section === 'reviews') loadReviewsAdmin();
+        if (section === 'messages') loadMessages();
+        if (section === 'services') loadServicesAdmin();
+      });
+    });
+
+    // Logout
+    document.getElementById('logout-btn').addEventListener('click', async () => {
+      await api('/admin/logout', { method: 'POST' });
+      window.location.href = '/admin/';
+    });
+
+    // Stats
+    async function loadStats() {
+      const data = await api('/admin/stats');
+      if (!data.success) return;
+      const d = data.data;
+      document.getElementById('stat-orders').textContent = d.total_orders;
+      document.getElementById('stat-pending').textContent = d.pending_orders;
+      document.getElementById('stat-completed').textContent = d.completed_orders;
+      document.getElementById('stat-messages').textContent = d.unread_messages;
+      document.getElementById('stat-services').textContent = d.total_services;
+      document.getElementById('stat-projects').textContent = d.total_projects;
+      document.getElementById('stat-reviews').textContent = d.total_reviews;
+    }
+
+    // Orders
+    async function loadOrders(status = '') {
+      const q = status ? `?status=${status}` : '';
+      const data = await api('/admin/orders' + q);
+      const tbody = document.getElementById('orders-tbody');
+      if (!data.success || !data.data?.length) {
+        tbody.innerHTML = '<tr><td colspan="6" class="px-4 py-8 text-center text-gray-500">No orders found</td></tr>';
+        return;
+      }
+      tbody.innerHTML = data.data.map(o => `
+        <tr class="hover:bg-gold-500/5">
+          <td class="px-4 py-3 font-mono text-xs text-gold-400">${o.reference_no}</td>
+          <td class="px-4 py-3">
+            <div>${o.customer_name}</div>
+            <div class="text-xs text-gray-500">${o.customer_phone}</div>
+          </td>
+          <td class="px-4 py-3 text-sm">${o.service_title || '—'}</td>
+          <td class="px-4 py-3">
+            <select data-id="${o.id}" class="order-status bg-charcoal-800 border border-gold-500/20 rounded px-2 py-1 text-xs">
+              ${['new','pending','in_progress','completed','cancelled'].map(s => 
+                `<option value="${s}" ${o.status===s?'selected':''}>${s}</option>`
+              ).join('')}
+            </select>
+          </td>
+          <td class="px-4 py-3 text-xs text-gray-500">${o.created_at?.slice(0,10) || ''}</td>
+          <td class="px-4 py-3 text-xs text-gray-400 max-w-[150px] truncate">${o.requirements || ''}</td>
+        </tr>
+      `).join('');
+
+      tbody.querySelectorAll('.order-status').forEach(sel => {
+        sel.addEventListener('change', async () => {
+          await api(`/admin/orders/${sel.dataset.id}`, {
+            method: 'PUT',
+            body: JSON.stringify({ status: sel.value })
+          });
+          loadStats();
+        });
+      });
+    }
+
+    document.getElementById('order-filter')?.addEventListener('change', (e) => loadOrders(e.target.value));
+
+    // Projects Admin
+    async function loadProjectsAdmin() {
+      const data = await api('/admin/projects');
+      const list = document.getElementById('projects-admin-list');
+      if (!data.success || !data.data?.length) {
+        list.innerHTML = '<p class="text-gray-500">No projects</p>';
+        return;
+      }
+      list.innerHTML = data.data.map(p => `
+        <div class="bg-charcoal-900 border border-gold-500/15 rounded-xl p-4 flex items-start justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] uppercase bg-gold-500/15 text-gold-400 px-1.5 py-0.5 rounded">Sample</span>
+              <span class="font-medium">${p.title_en}</span>
+            </div>
+            <div class="text-xs text-gray-500">${p.category} · ${p.is_active ? 'Active' : 'Hidden'} · ${p.is_featured ? 'Featured' : ''}</div>
+          </div>
+          <div class="flex gap-2 shrink-0">
+            <button onclick="toggleProject(${p.id}, ${p.is_active ? 0 : 1})" class="text-xs px-2 py-1 rounded border border-gold-500/30 text-gold-400 hover:bg-gold-500/10">
+              ${p.is_active ? 'Hide' : 'Show'}
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    window.toggleProject = async (id, active) => {
+      await api(`/admin/projects/${id}`, { method: 'PUT', body: JSON.stringify({ is_active: active }) });
+      loadProjectsAdmin();
+    };
+
+    // Reviews Admin
+    async function loadReviewsAdmin() {
+      const data = await api('/admin/reviews');
+      const list = document.getElementById('reviews-admin-list');
+      if (!data.success || !data.data?.length) {
+        list.innerHTML = '<p class="text-gray-500 py-8 text-center">No reviews submitted yet. Real customer reviews will appear here for approval.</p>';
+        return;
+      }
+      list.innerHTML = data.data.map(r => `
+        <div class="bg-charcoal-900 border border-gold-500/15 rounded-xl p-4">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div class="font-medium">${r.customer_name} <span class="text-gold-500 text-sm">${'★'.repeat(r.rating)}</span></div>
+              <div class="text-xs text-gray-500 mb-2">${r.service_taken || '—'} · ${r.created_at?.slice(0,10)}</div>
+              <p class="text-sm text-gray-300">${r.review_text_en}</p>
+              <div class="mt-2 flex gap-2 text-xs">
+                <span class="px-2 py-0.5 rounded ${r.is_approved ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'}">
+                  ${r.is_approved ? 'Approved' : 'Pending'}
+                </span>
+                <span class="px-2 py-0.5 rounded ${r.is_published ? 'bg-blue-500/20 text-blue-400' : 'bg-gray-500/20 text-gray-400'}">
+                  ${r.is_published ? 'Published' : 'Unpublished'}
+                </span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1 shrink-0">
+              ${!r.is_approved ? `<button onclick="updateReview(${r.id}, {is_approved:1})" class="text-xs px-2 py-1 rounded bg-green-500/20 text-green-400">Approve</button>` : ''}
+              <button onclick="updateReview(${r.id}, {is_published: ${r.is_published ? 0 : 1}})" class="text-xs px-2 py-1 rounded border border-gold-500/30 text-gold-400">
+                ${r.is_published ? 'Unpublish' : 'Publish'}
+              </button>
+              <button onclick="deleteReview(${r.id})" class="text-xs px-2 py-1 rounded text-red-400 hover:bg-red-500/10">Delete</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    window.updateReview = async (id, body) => {
+      await api(`/admin/reviews/${id}`, { method: 'PUT', body: JSON.stringify(body) });
+      loadReviewsAdmin();
+      loadStats();
+    };
+
+    window.deleteReview = async (id) => {
+      if (!confirm('Delete this review?')) return;
+      await api(`/admin/reviews/${id}`, { method: 'DELETE' });
+      loadReviewsAdmin();
+      loadStats();
+    };
+
+    // Messages
+    async function loadMessages() {
+      const data = await api('/admin/messages');
+      const list = document.getElementById('messages-list');
+      if (!data.success || !data.data?.length) {
+        list.innerHTML = '<p class="text-gray-500">No messages</p>';
+        return;
+      }
+      list.innerHTML = data.data.map(m => `
+        <div class="bg-charcoal-900 border border-gold-500/15 rounded-xl p-4 ${m.is_read ? 'opacity-70' : ''}">
+          <div class="flex justify-between items-start">
+            <div>
+              <div class="font-medium">${m.name} ${!m.is_read ? '<span class="text-[10px] bg-blue-500/20 text-blue-400 px-1.5 py-0.5 rounded ml-1">New</span>' : ''}</div>
+              <div class="text-xs text-gray-500">${m.email || ''} ${m.phone || ''} · ${m.created_at?.slice(0,16)}</div>
+              ${m.subject ? `<div class="text-sm text-gold-400/80 mt-1">${m.subject}</div>` : ''}
+              <p class="text-sm text-gray-300 mt-2">${m.message}</p>
+            </div>
+            ${!m.is_read ? `<button onclick="markRead(${m.id})" class="text-xs px-2 py-1 rounded border border-gold-500/30 text-gold-400 shrink-0">Mark Read</button>` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    window.markRead = async (id) => {
+      await api(`/admin/messages/${id}/read`, { method: 'PUT' });
+      loadMessages();
+      loadStats();
+    };
+
+    // Services Admin
+    async function loadServicesAdmin() {
+      const data = await api('/admin/services');
+      const list = document.getElementById('services-admin-list');
+      if (!data.success) return;
+      list.innerHTML = data.data.map(s => `
+        <div class="bg-charcoal-900 border border-gold-500/15 rounded-xl p-4 flex justify-between items-center">
+          <div>
+            <div class="font-medium">${s.title_en}</div>
+            <div class="text-xs text-gray-500">${s.category} · ${s.price_label || 'Custom'}</div>
+          </div>
+          <span class="text-xs ${s.is_active ? 'text-green-400' : 'text-gray-500'}">${s.is_active ? 'Active' : 'Inactive'}</span>
+        </div>
+      `).join('');
+    }
+
+    // Init
+    (async () => {
+      const admin = await checkAuth();
+      if (admin) {
+        loadStats();
+      }
+    })();
+  </script>
+</body>
+</html>
