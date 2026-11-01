@@ -5,7 +5,7 @@ compatibility_flags = ["nodejs_compat"]
 
 # Static assets (frontend)
 [assets]
-directory = "./public"
+directory = "."
 binding = "ASSETS"
 
 # D1 Database
