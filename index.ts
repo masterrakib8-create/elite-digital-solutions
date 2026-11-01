@@ -1,5 +1,4 @@
 import { Hono } from 'hono';
-import { cors } from 'hono/cors';
 import { secureHeaders } from 'hono/secure-headers';
 import { getCookie, setCookie, deleteCookie } from 'hono/cookie';
 import type { Env, Admin } from './types';
@@ -27,12 +26,6 @@ app.use('*', secureHeaders({
   },
 }));
 
-app.use('/api/*', cors({
-  origin: (origin) => origin || '*',
-  allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-}));
 
 // ========== Helpers ==========
 async function requireAdmin(c: any) {
