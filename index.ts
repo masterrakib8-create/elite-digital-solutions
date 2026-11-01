@@ -457,6 +457,14 @@ app.post('/api/admin/change-password', async (c) => {
   return jsonOk(c, { message: 'Password changed successfully' });
 });
 
+// Admin dashboard entry points
+app.get('/admin', async (c) => {
+  return c.env.ASSETS.fetch(new Request(new URL('/dashboard.html', c.req.url)));
+});
+app.get('/admin/', async (c) => {
+  return c.env.ASSETS.fetch(new Request(new URL('/dashboard.html', c.req.url)));
+});
+
 // ========== Serve static assets (fallback) ==========
 app.get('*', async (c) => {
   // Try to serve from ASSETS binding first
