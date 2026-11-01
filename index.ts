@@ -11,7 +11,7 @@ import {
   destroySession,
   generateOrderRef,
   checkRateLimit,
-} from './utils/auth';
+} from './auth';
 
 const app = new Hono<{ Bindings: Env; Variables: { admin: Admin } }>();
 
