@@ -20,7 +20,7 @@ database_id = "76f5ee50-b4cb-47ca-9668-abe1de371a37"  # Replace after creating w
 [vars]
 ENVIRONMENT = "production"
 SITE_NAME = "Elite Digital Solutions"
-SITE_URL = "https://elitedigital.pages.dev"  # Update with your domain
+SITE_URL = "https://elitedigitalsolutions.masterrakib8.workers.dev"
 ADMIN_EMAIL = "admin@elitedigitalsolutions.com"
 
 # For local development
